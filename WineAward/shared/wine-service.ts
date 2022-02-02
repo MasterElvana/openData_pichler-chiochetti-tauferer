@@ -1,6 +1,7 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { HttpClient, HttpErrorResponse, HttpResponse, HttpResponseBase } from '@angular/common/http';
+import { Wine } from "./wine";
 
 const URL = 'https://api.tourism.testingmachine.eu/v1/WineAward';
 
