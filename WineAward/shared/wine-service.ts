@@ -3,7 +3,7 @@ import { Observable } from "rxjs";
 import { HttpClient, HttpErrorResponse, HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Wine } from "./wine";
 
-const URL = 'https://api.tourism.testingmachine.eu/v1/WineAward';
+const URL = 'https://api.tourism.testingmachine.eu/v1/WineAward?language=de';
 
 @Injectable()
 export class WineService {
@@ -14,7 +14,7 @@ export class WineService {
  constructor(private http: HttpClient) { }
 
  getWine(titel: string) {
-  return this.http.get<Wine>(`${URL}/wine/${titel}`);
+  return this.http.get<Wine>(`${URL}&searchfilter=${titel}`);
  }
 
  getAllWineSearchTerm(searchTerm: string): Observable<Wine[]> {

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Wine } from 'shared/wine';
 
 @Component({
   selector: 'wa-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'WineAward';
+  wine!: Wine;
 }
