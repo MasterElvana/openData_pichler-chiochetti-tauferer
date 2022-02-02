@@ -13,18 +13,26 @@ export class WineService {
 
  constructor(private http: HttpClient) { }
 
- getWine(titel: string) {
-  return this.http.get<Wine>(`${URL}&searchfilter=${titel}`);
+ getWineOnTitel(titel: string) {
+  var wines: Wine[];
+  var hilfe: any;
+  this.http.get(`${URL}&searchfilter=${titel}`).subscribe((weine)=>hilfe=weine);
+  hilfe.forEach(actwine => {
+    wines.push();
+  });
  }
 
- getAllWineSearchTerm(searchTerm: string): Observable<Wine[]> {
+ getWineOnYear(vintage: number): Observable<Wine[]> {
  return this.http
- .get<Wine[]>(`${URL}/wines/search/${searchTerm}`);
+ .get<Wine[]>(`${URL}/wines/search/${vintage}`);
+ }
+
+ getWineAward(award: string){
+  return this.http.get(`${URL}&searchfilter=${award}`);
  }
 
  getAllWines(){
-  return this.http
-  .get<Wine[]>(`${URL}/wines`);
+  return this.http.get<Wine[]>(`${URL}&searchfilter=""`);
  };
 
 }

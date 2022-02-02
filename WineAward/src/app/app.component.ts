@@ -1,3 +1,4 @@
+import { WineService } from './../../shared/wine-service';
 import { Component } from '@angular/core';
 import { Wine } from 'shared/wine';
 
@@ -8,5 +9,10 @@ import { Wine } from 'shared/wine';
 })
 export class AppComponent {
   title = 'WineAward';
+  response!: any;
   wine!: Wine;
+  constructor(private ws: WineService){}
+  test(){
+    this.ws.getWineOnTitel("").subscribe((test)=>console.log(test));
+  }
 }
