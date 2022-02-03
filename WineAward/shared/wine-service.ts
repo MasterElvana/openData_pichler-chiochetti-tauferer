@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Observable } from "rxjs";
+import { map } from "rxjs/operators";
 import { HttpClient, HttpErrorResponse, HttpResponse, HttpResponseBase } from '@angular/common/http';
 import { Wine } from "./wine";
 
@@ -13,14 +14,15 @@ export class WineService {
 
  constructor(private http: HttpClient) { }
 
- getWineOnTitel(titel: string) {
-  var wines: Wine[];
-  var hilfe: any;
-  this.http.get(`${URL}&searchfilter=${titel}`).subscribe((weine)=>hilfe=weine);
-  hilfe.forEach(actwine => {
-    wines.push();
-  });
- }
+ getWineOnTitel(titel: string): Observable<Array<Wine>> {
+  return this.http.get<Array<any>>(`${URL}&searchfilter=${titel}`)
+  .pipe(
+    map((weine)=>{
+      return weine.map(actwine => {
+    return new Wine(actwine.Id,actwine.Shortname,actwine.Vintage,actwine.Awardyear,actwine.Awards);
+  })
+ })
+ )};
 
  getWineOnYear(vintage: number): Observable<Wine[]> {
  return this.http

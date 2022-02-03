@@ -13,6 +13,7 @@ export class AppComponent {
   wine!: Wine;
   constructor(private ws: WineService){}
   test(){
-    this.ws.getWineOnTitel("").subscribe((test)=>console.log(test));
+    this.ws.getWineOnTitel("").subscribe(response => console.log(response));
+
   }
 }
