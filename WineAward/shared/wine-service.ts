@@ -33,8 +33,4 @@ export class WineService {
   return this.http.get(`${URL}&searchfilter=${award}`);
  }
 
- getAllWines(){
-  return this.http.get<Wine[]>(`${URL}&searchfilter=""`);
- };
-
 }
