@@ -17,4 +17,7 @@ export class AppComponent {
     this.ws.getWineOnTitel("").subscribe(response => console.log(response));
 
   }
+  all(){
+    this.ws.getAllWines().subscribe(response => console.log(response));
+  }
 }
