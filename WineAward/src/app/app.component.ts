@@ -2,6 +2,7 @@ import { WineService } from './../../shared/wine-service';
 import { Component } from '@angular/core';
 import { Wine } from 'shared/wine';
 
+
 @Component({
   selector: 'wa-root',
   templateUrl: './app.component.html',
