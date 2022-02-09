@@ -3,7 +3,7 @@
 <button mat-button (click)="year(2018)">Action</button>
 <button mat-button (click)="award('WineHunter Award Platinum & Gold')">Award</button>
 
-<form class="example-form">
+<form class="example-form" #(submit)="">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Award</mat-label>
         <input matInput placeholder="Ex. Wineaward 2012" value="">
@@ -18,3 +18,4 @@
         <mat-label>Name</mat-label>
         <input matInput placeholder="Ex. " value="">
     </mat-form-field>
+  </form>
