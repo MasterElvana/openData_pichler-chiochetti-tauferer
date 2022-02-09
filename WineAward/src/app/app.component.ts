@@ -21,4 +21,7 @@ export class AppComponent {
   all(){
     this.ws.getWineOnTitel('').subscribe(response => console.log(response));
   }
+  year(year: number){
+    this.ws.getWineOnYear(year).subscribe(response => console.log(response));
+  }
 }

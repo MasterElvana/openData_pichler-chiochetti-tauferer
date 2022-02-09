@@ -25,9 +25,16 @@ export class WineService {
  )};
 
  getWineOnYear(vintage: number): Observable<Wine[]> {
- return this.http
- .get<Wine[]>(`${URL}/wines/search/${vintage}`);
- }
+  return this.http.get<Array<any>>(`${URL}&rawfilter=eq%28Vintage%2C%20${vintage}%29`)
+  .pipe(
+    map((weine)=>{
+      return weine.map(actwine => {
+    return new Wine(actwine.Id,actwine.Shortname,actwine.Vintage,actwine.Awardyear,actwine.Awards);
+  })
+ })
+ )};
+
+//rawfilter=eq%28Vintage%2C%202018%29&
 
  getWineAward(award: string){
   return this.http.get(`${URL}&searchfilter=${award}`);
