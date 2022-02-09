@@ -15,6 +15,7 @@ export class WineService {
  constructor(private http: HttpClient) { }
 
  getWineOnTitel(titel: string): Observable<Array<Wine>> {
+   console.log(URL+'&searchfilter='+titel);
   return this.http.get<Array<any>>(`${URL}&searchfilter=${titel}`)
   .pipe(
     map((weine)=>{
@@ -32,9 +33,5 @@ export class WineService {
  getWineAward(award: string){
   return this.http.get(`${URL}&searchfilter=${award}`);
  }
-
- getAllWines(){
-  return this.http.get<Wine[]>(`${URL}&searchfilter=""`);
- };
 
 }
