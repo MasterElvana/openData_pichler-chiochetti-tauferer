@@ -34,10 +34,15 @@ export class WineService {
  })
  )};
 
-//rawfilter=eq%28Vintage%2C%202018%29&
+ getWineAward(award: string): Observable<Wine[]>{
+  return this.http.get<Array<any>>(`${URL}&rawfilter=in%28Awards.%5B%2A%5D%2C%20%22${award}%22%29`).pipe(
+    map((weine)=>{
+      return weine.map(actwine => {
+    return new Wine(actwine.Id,actwine.Shortname,actwine.Vintage,actwine.Awardyear,actwine.Awards);
+  })
+ })
+ )};
 
- getWineAward(award: string){
-  return this.http.get(`${URL}&searchfilter=${award}`);
- }
+//rawfilter=in%28Awards.%5B%2A%5D%2C%20%22WineHunter%20Award%20Platinum%20%26%20Gold%22%29
 
 }

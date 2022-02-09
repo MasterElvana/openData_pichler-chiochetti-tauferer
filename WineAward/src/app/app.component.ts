@@ -24,4 +24,7 @@ export class AppComponent {
   year(year: number){
     this.ws.getWineOnYear(year).subscribe(response => console.log(response));
   }
+  award(award: string){
+    this.ws.getWineAward(encodeURIComponent(award.trim())).subscribe(response => console.log(response));
+  }
 }
