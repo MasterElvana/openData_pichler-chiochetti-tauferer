@@ -12,11 +12,14 @@ export class AppComponent {
   title = 'WineAward';
   response!: any;
   wine!: Wine;
+  yearsearch!: number;
+  titelsearch!: string;
+  awardsearch!: string;
+
   constructor(private ws: WineService){}
 
   test(titel: string){
     this.ws.getWineOnTitel(titel).subscribe(response => console.log(response));
-
   }
   all(){
     this.ws.getWineOnTitel('').subscribe(response => console.log(response));

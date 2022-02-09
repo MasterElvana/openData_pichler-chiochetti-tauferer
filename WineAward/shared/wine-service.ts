@@ -42,7 +42,4 @@ export class WineService {
   })
  })
  )};
-
-//rawfilter=in%28Awards.%5B%2A%5D%2C%20%22WineHunter%20Award%20Platinum%20%26%20Gold%22%29
-
 }
