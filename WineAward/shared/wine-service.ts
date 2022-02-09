@@ -29,6 +29,9 @@ export class WineService {
  .get<Wine[]>(`${URL}/wines/search/${vintage}`);
  }
 
+//https://api.tourism.testingmachine.eu/v1/WineAward?idlist=E45&fields=Id&fields=Awards&fields=Awardyear&fields=Shortname&fields=Vintage&language=de&rawfilter=eq%28Vintage%2C%202018%29&removenullvalues=false
+
+
  getWineAward(award: string){
   return this.http.get(`${URL}&searchfilter=${award}`);
  }
