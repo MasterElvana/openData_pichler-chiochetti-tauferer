@@ -1,0 +1,32 @@
+<table mat-table [dataSource]="data" style="width: 100%;">
+
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}}</td>
+    </ng-container>
+
+    <ng-container matColumnDef="titel">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let element"> {{element.titel}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="vintage">
+        <th mat-header-cell *matHeaderCellDef> Vintage Year </th>
+        <td mat-cell *matCellDef="let element"> {{element.vintage}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="awardyear">
+        <th mat-header-cell *matHeaderCellDef> Award Year </th>
+        <td mat-cell *matCellDef="let element"> {{element.awardyear}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="awards">
+        <th mat-header-cell *matHeaderCellDef> Awards </th>
+        <td mat-cell *matCellDef="let element"> {{element.awards[0]}} </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<button mat-button (click)="awards()">awards()</button>

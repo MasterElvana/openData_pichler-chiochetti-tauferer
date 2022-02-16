@@ -4,6 +4,6 @@ export class Wine {
     public titel: string,
     public vintage: number,
     public awardyear: number,
-    public awards: string[],
+    public awards: string[]
   ) { }
 }
