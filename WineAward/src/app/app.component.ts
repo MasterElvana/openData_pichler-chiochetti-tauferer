@@ -18,16 +18,4 @@ export class AppComponent {
 
   constructor(private ws: WineService){}
 
-  test(titel: string){
-    this.ws.getWineOnTitel(titel).subscribe(response => console.log(response));
-  }
-  all(){
-    this.ws.getWineOnTitel('').subscribe(response => console.log(response));
-  }
-  year(year: number){
-    this.ws.getWineOnYear(year).subscribe(response => console.log(response));
-  }
-  award(award: string){
-    this.ws.getWineAward(encodeURIComponent(award.trim())).subscribe(response => console.log(response));
-  }
 }

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
@@ -16,6 +17,7 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { TableComponent } from './table/table.component';
 import { SearchComponent } from './search/search.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 
@@ -24,7 +26,8 @@ import { SearchComponent } from './search/search.component';
   declarations: [
     AppComponent,
     TableComponent,
-    SearchComponent
+    SearchComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +40,8 @@ import { SearchComponent } from './search/search.component';
     MatFormFieldModule,
     MatIconModule,
     MatInputModule,
-    MatTableModule
+    MatTableModule,
+    MatProgressSpinnerModule
   ],
   providers: [WineService],
   bootstrap: [AppComponent]

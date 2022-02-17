@@ -1,25 +1,31 @@
-<form class="example-form" #(submit)="">
+<form #(submit)="">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Award</mat-label>
-        <input type="text" matInput placeholder="Ex. Wineaward 2012" value="">
+        <input type="text" matInput placeholder="Ex. Wineaward 2012" #searchTermA>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Year</mat-label>
-        <input type="number" matInput placeholder="Ex. 2008" value="">
+        <input type="number" matInput placeholder="Ex. 2008" #searchTermV>
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Type</mat-label>
-        <input type="text" matInput placeholder="Ex. Blauburgunder" value="">
+        <input type="text" matInput placeholder="Ex. Blauburgunder" #searchTermT>
     </mat-form-field>
-</form>
 
-<!--
-  formControlName="award"
-  formControlName="year"
-  formControlName="name"
-[formGroup]="filterForm"
-  [(ngModel)]="awardTerm"
-  [(ngModel)]="vintageTerm"
-  [(ngModel)]="titelTerm"-->
+    <ng-container *ngIf="searchTermA.value;else second">
+        <button mat-button (click)="award(searchTermA.value)"><mat-icon>search</mat-icon></button>
+    </ng-container>
+    <ng-template #second>
+        <ng-container *ngIf="searchTermV.value;else third">
+            <button mat-button (click)="year(searchTermV.value)"><mat-icon>search</mat-icon></button>
+        </ng-container>
+    </ng-template>
+    <ng-template #third>
+        <ng-container *ngIf="searchTermT.value"></ng-container>
+        <button mat-button (click)="titel(searchTermT.value)"><mat-icon>search</mat-icon></button>
+    </ng-template>
+</form>
+<!--<wa-spinner></wa-spinner>-->
+<wa-table [data]="allwines"></wa-table>
