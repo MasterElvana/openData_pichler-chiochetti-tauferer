@@ -35,16 +35,5 @@ export class SearchComponent implements OnInit {
   ngOnInit(){
     this.all();
   }
-  /*search(searchTerm: string | number){
-    if(this.awardTerm)
-    this.ws.getWineAward(encodeURIComponent(this.awardTerm.trim())).subscribe(response => {this.allwines = response;console.log(response);});
-    if(searchTerm===this.number)
-    this.ws.getWineOnYear(Number(this.vintageTerm)).subscribe(response => {this.allwines = response;console.log(response);});
-    if(this.titelTerm)
-    this.ws.getWineOnTitel(this.titelTerm).subscribe(response => {this.allwines = response;console.log(response);});
-    else
-    this.ws.getWineOnTitel('').subscribe(response => {this.allwines = response;console.log(response);});
-    return this.allwines;
-  }*/
 
 }

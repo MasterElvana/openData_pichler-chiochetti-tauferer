@@ -24,11 +24,6 @@ export class WineService {
  })
  )};
 
- /*getAward(): Observable<string>{
-  return this.http.get<Array<any>>(`${URL}&searchfilter=`)
-
- }*/
-
  getAllWines(): Observable<Array<Wine>> {
    let titel='';
   return this.http.get<Array<any>>(`${URL}&searchfilter=${titel}`)

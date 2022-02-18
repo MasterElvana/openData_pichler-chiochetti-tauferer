@@ -22,7 +22,7 @@
 
     <ng-container matColumnDef="awards">
         <th mat-header-cell *matHeaderCellDef> Awards </th>
-        <td mat-cell *matCellDef="let element"> {{element.awards[0]}} </td>
+        <td mat-cell *matCellDef="let element"> {{element.awards.toString()}} </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

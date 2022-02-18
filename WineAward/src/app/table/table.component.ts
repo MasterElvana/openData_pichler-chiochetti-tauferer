@@ -12,15 +12,10 @@ export class TableComponent implements OnInit {
 
   wine!: Wine;
   @Input() data!: Wine[];
-  //awadata: string= this.ws.getAwards();
   displayedColumns: string[] = ['id', 'titel', 'vintage', 'awardyear', 'awards'];
 
   constructor(private ws: WineService) {
     //this.data = ws.getAllWines();
-  }
-
-  awards(){
-   // this.ws.getAwards().subscribe(response => console.log(response.toString()));
   }
   ngOnInit(): void {
   }
