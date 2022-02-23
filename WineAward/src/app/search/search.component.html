@@ -23,9 +23,12 @@
         </ng-container>
     </ng-template>
     <ng-template #third>
-        <ng-container *ngIf="searchTermT.value">
+        <ng-container *ngIf="searchTermT.value; else default">
             <button mat-button (click)="titel(searchTermT.value)"><mat-icon>search</mat-icon></button>
         </ng-container>
+    </ng-template>
+    <ng-template #default>
+        <button mat-button (click)="titel('')"><mat-icon>search</mat-icon></button>
     </ng-template>
 </form>
 <!--<wa-spinner></wa-spinner>-->
