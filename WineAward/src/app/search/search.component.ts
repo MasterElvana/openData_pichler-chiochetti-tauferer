@@ -20,17 +20,29 @@ export class SearchComponent implements OnInit {
   number!: number;
 
   titel(searchTermT: string){
-    this.ws.getWineOnTitel(searchTermT).subscribe(response => {this.allwines = response;console.log(response);});
+    this.ws.getWineOnTitel(searchTermT).subscribe(response => {if (response.length != 0) {this.allwines = response;console.log(response);}});
   }
   all(){
      this.ws.getWineOnTitel('').subscribe(response => {this.allwines = response;console.log(response);});
   }
   year(searchTermV: string){
-    this.ws.getWineOnYear(Number(searchTermV)).subscribe(response => {this.allwines = response;console.log(response);});
+    this.ws.getWineOnYear(Number(searchTermV)).subscribe(response => {if (response.length != 0) {this.allwines = response;console.log(response);}});
   }
   award(searchTermA: string){
-    this.ws.getWineAward(encodeURIComponent(searchTermA.trim())).subscribe(response => {this.allwines = response;console.log(response);});
+    this.ws.getWineAward(encodeURIComponent(searchTermA.trim())).subscribe(response => {if (response.length != 0) {this.allwines = response;console.log(response);}});
   }
+
+  searchAll(searchTerm: string){
+
+    if (Number(searchTerm)) {
+      this.year(searchTerm)
+    } else {
+      this.titel(searchTerm)
+      this.award(searchTerm)
+    }
+
+
+    }
 
   ngOnInit(){
     this.all();

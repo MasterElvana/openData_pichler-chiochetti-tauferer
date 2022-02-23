@@ -3,32 +3,11 @@
         <mat-label>Award</mat-label>
         <input type="text" matInput placeholder="Ex. Wineaward 2012" #searchTermA>
     </mat-form-field>
-
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Year</mat-label>
-        <input type="number" matInput placeholder="Ex. 2008" #searchTermV>
-    </mat-form-field>
-
-    <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Type</mat-label>
-        <input type="text" matInput placeholder="Ex. Blauburgunder" #searchTermT>
-    </mat-form-field>
-
-    <ng-container *ngIf="searchTermA.value;else second">
-        <button mat-button (click)="award(searchTermA.value)"><mat-icon>search</mat-icon></button>
+    <ng-container *ngIf="searchTermA.value">
+        <button mat-button (click)="searchAll(searchTermA.value)"><mat-icon>search</mat-icon></button>
     </ng-container>
-    <ng-template #second>
-        <ng-container *ngIf="searchTermV.value;else third">
-            <button mat-button (click)="year(searchTermV.value)"><mat-icon>search</mat-icon></button>
-        </ng-container>
-    </ng-template>
-    <ng-template #third>
-        <ng-container *ngIf="searchTermT.value; else default">
-            <button mat-button (click)="titel(searchTermT.value)"><mat-icon>search</mat-icon></button>
-        </ng-container>
-    </ng-template>
     <ng-template #default>
-        <button mat-button (click)="titel('')"><mat-icon>search</mat-icon></button>
+        <button mat-button (click)="searchAll('')"><mat-icon>search</mat-icon></button>
     </ng-template>
 </form>
 <!--<wa-spinner></wa-spinner>-->
