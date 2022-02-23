@@ -15,7 +15,6 @@ export class TableComponent implements OnInit {
   displayedColumns: string[] = ['id', 'titel', 'vintage', 'awardyear', 'awards'];
 
   constructor(private ws: WineService) {
-    //this.data = ws.getAllWines();
   }
   ngOnInit(): void {
   }

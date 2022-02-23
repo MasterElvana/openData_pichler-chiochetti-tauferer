@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SearchComponent } from './search/search.component';
-import { TableComponent } from './table/table.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 const routes: Routes = [
-  {path: 'table', component: TableComponent},
+  {path: 'spinner', component: SpinnerComponent},
   {path: 'search', component: SearchComponent},
 ];
 
