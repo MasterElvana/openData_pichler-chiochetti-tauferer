@@ -1,17 +1,17 @@
 <form #(submit)="">
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Award</mat-label>
-        <input type="text" matInput placeholder="Ex. Wineaward 2012" #searchTermA>
+        <input type="text" matInput placeholder="Ex. Wineaward 2012" #searchTermA [disabled]="searchTermV.value !== ''  || searchTermT.value !== '' ">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Year</mat-label>
-        <input type="number" matInput placeholder="Ex. 2008" #searchTermV>
+        <input type="number" matInput placeholder="Ex. 2008" #searchTermV [disabled]="searchTermA.value !== ''  || searchTermT.value !== '' ">
     </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Type</mat-label>
-        <input type="text" matInput placeholder="Ex. Blauburgunder" #searchTermT>
+        <input type="text" matInput placeholder="Ex. Blauburgunder" #searchTermT [disabled]="searchTermV.value !== ''  || searchTermA.value !== '' ">
     </mat-form-field>
 
     <ng-container *ngIf="searchTermA.value;else second">
